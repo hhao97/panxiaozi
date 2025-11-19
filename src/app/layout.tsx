@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "盘搜索,网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,资源搜索",
   authors: [{ name: "盘搜索" }],
   robots: "index, follow",
-  metadataBase: new URL("https://pansousuo.cc"),
+  metadataBase: new URL("https://pansousuo.top"),
   alternates: {
     canonical: "./",
   },
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     siteName: "盘搜索",
-    url: "https://pansousuo.cc",
+    url: "https://pansousuo.top",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://pansousuo.cc",
+    site: "https://pansousuo.top",
     creator: "@towelong",
     title: "盘搜索 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
     description:

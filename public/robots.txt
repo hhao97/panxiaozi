@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://pansousuo.cc/sitemap.xml
+Sitemap: https://pansousuo.top/sitemap.xml

@@ -5,7 +5,7 @@ export const revalidate = 300;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 基础URL
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://pansousuo.cc";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://pansousuo.top";
 
   // 静态路由
   const staticRoutes = [
