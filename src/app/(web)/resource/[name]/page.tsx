@@ -158,9 +158,10 @@ export default async function ResourcePage({
           </div>
         </div>
       </div>
-
-      <Alert className="mb-6 bg-amber-50 border-amber-200">
+      {/*注释*/}
+      {/*<Alert className="mb-6 bg-amber-50 border-amber-200">
         <AlertTriangle className="h-4 w-4 text-amber-500" />
+
         <AlertDescription className="text-amber-700">
           <p>
             资源一定要转到夸克网盘方可观看全部，否则只能观看2分钟的试片，夸克还可以投屏！资源不对的话关注微信公众号
@@ -171,7 +172,7 @@ export default async function ResourcePage({
             <WechatQRModal src="/wechat.jpg" alt="小付说工具" />
           </p>
         </AlertDescription>
-      </Alert>
+      </Alert>*/}
 
       <div className="bg-card rounded-lg p-1 md:p-6 mb-6 shadow-sm">
         <div className="flex flex-col md:flex-row items-start mb-4">
