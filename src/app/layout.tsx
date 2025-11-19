@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "盘小子,网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,资源搜索",
   authors: [{ name: "盘小子" }],
   robots: "index, follow",
-  metadataBase: new URL("https://pan.xiaozi.cc"),
+  metadataBase: new URL("https://pansousuo.cc"),
   alternates: {
     canonical: "./",
   },
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     siteName: "盘小子",
-    url: "https://pan.xiaozi.cc",
+    url: "https://pansousuo.cc",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://pan.xiaozi.cc",
+    site: "https://pansousuo.cc",
     creator: "@towelong",
-    title: "盘小子 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
+    title: "盘搜索 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
     description:
       "盘小子为您提供免费的网盘资源搜索服务，支持多个主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。",
     images: ["/og.png"],

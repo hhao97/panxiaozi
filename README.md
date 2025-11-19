@@ -12,7 +12,7 @@
 </p>
 
 
-在线体验：https://pan.xiaozi.cc
+在线体验：https://pansousuo.cc
 
 ## 主要特性
 
