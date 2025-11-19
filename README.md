@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./public/logos/logo.svg" width="100" height="100">
 </p>
-<h1 align="center">盘小子</h1>
+<h1 align="center">盘搜索</h1>
 
 ## 项目简介
 

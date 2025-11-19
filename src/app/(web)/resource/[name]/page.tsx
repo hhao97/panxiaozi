@@ -63,7 +63,7 @@ export async function generateMetadata({
   return {
     title: `${resource?.title || ""}${
       resource?.diskType || ""
-    }网盘资源下载 - 盘小子`,
+    }网盘资源下载 - 盘搜索`,
     description:
       resource?.desc ||
       "盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达",
@@ -102,7 +102,10 @@ export default async function ResourcePage({
           首页
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
-        <Link href="/resource" className="hover:underline whitespace-nowrap shrink-0">
+        <Link
+          href="/resource"
+          className="hover:underline whitespace-nowrap shrink-0"
+        >
           资源
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
@@ -132,7 +135,7 @@ export default async function ResourcePage({
           <h1
             className={cn(
               "text-2xl font-bold mb-6",
-              resource.cover ? "text-left" : " text-center"
+              resource.cover ? "text-left" : " text-center",
             )}
           >
             {resource.title}

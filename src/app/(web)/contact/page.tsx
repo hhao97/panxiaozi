@@ -2,7 +2,7 @@ import { WechatQRModal } from "@/components/wechat-qr-modal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "联系我们 - 盘小子",
+  title: "联系我们 - 盘搜索",
   description:
     "盘小子致力于打造一站式网盘资源搜索平台。我们仅提供搜索服务，不存储、上传或分发任何网盘内容。",
 };

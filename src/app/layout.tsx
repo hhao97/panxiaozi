@@ -13,12 +13,12 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "盘小子 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
+  title: "盘搜索 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
   description:
     "盘小子为您提供免费的网盘资源搜索服务，支持夸克网盘、百度网盘、阿里云盘等主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。",
   keywords:
-    "盘小子,网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,资源搜索",
-  authors: [{ name: "盘小子" }],
+    "盘搜索,网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,资源搜索",
+  authors: [{ name: "盘搜索" }],
   robots: "index, follow",
   metadataBase: new URL("https://pansousuo.cc"),
   alternates: {
@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "盘小子 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
+    title: "盘搜索 - 免费网盘资源搜索引擎 | 一站式网盘搜索平台",
     description:
       "盘小子为您提供免费的网盘资源搜索服务，支持多个主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。",
     type: "website",
     locale: "zh_CN",
-    siteName: "盘小子",
+    siteName: "盘搜索",
     url: "https://pansousuo.cc",
     images: ["/og.png"],
   },
@@ -58,10 +58,10 @@ export default function RootLayout({
   return (
     <html lang="zh" suppressHydrationWarning>
       <head>
-        <meta name="application-name" content="盘小子" />
+        <meta name="application-name" content="盘搜索" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="盘小子" />
+        <meta name="apple-mobile-web-app-title" content="盘搜索" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-config" content="/browserconfig.xml" />

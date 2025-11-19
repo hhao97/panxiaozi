@@ -8,31 +8,31 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 
 export const metadata: Metadata = {
-	title: "盘小子 - 高质量网盘资源搜索引擎",
-	description: "高质量网盘资源搜索引擎",
+  title: "盘搜索 - 高质量网盘资源搜索引擎",
+  description: "高质量网盘资源搜索引擎",
 };
 
 export default async function AdminRootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	// 验证用户是否已登录
-	const user = await getCurrentUser();
+  // 验证用户是否已登录
+  const user = await getCurrentUser();
 
-	if (!user) {
-		redirect("/login");
-	}
+  if (!user) {
+    redirect("/login");
+  }
 
-	return (
-		<SidebarProvider>
-			<TitleProvider defaultTitle="管理后台">
-				<AppSidebar variant="inset" />
-				<SidebarInset>
-					<SiteHeader />
-					{children}
-				</SidebarInset>
-			</TitleProvider>
-		</SidebarProvider>
-	);
+  return (
+    <SidebarProvider>
+      <TitleProvider defaultTitle="管理后台">
+        <AppSidebar variant="inset" />
+        <SidebarInset>
+          <SiteHeader />
+          {children}
+        </SidebarInset>
+      </TitleProvider>
+    </SidebarProvider>
+  );
 }
