@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (query) {
     return {
       title: `${query}在线网盘资源搜索下载 - 盘搜索`,
-      description: `盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
+      description: `盘搜索是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
     };
   }
 
@@ -26,14 +26,14 @@ export async function generateMetadata({
     const categoryInfo = await getCategoryByKey(category);
     return {
       title: `${categoryInfo.name}在线网盘资源搜索下载 - 盘搜索`,
-      description: `盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
+      description: `盘搜索是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
     };
   }
 
   return {
     title: "在线网盘资源搜索下载 - 盘搜索",
     description:
-      "盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达",
+      "盘搜索是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达",
   };
 }
 
