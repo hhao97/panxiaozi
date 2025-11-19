@@ -1,7 +1,10 @@
 import { z } from "zod";
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
-import { getResourceDiskUrl, updateResourceDiskUrl } from "@/lib/db/queries/resource-disk";
+import {
+  getResourceDiskUrl,
+  updateResourceDiskUrl,
+} from "@/lib/db/queries/resource-disk";
 import { getCategoryByKey } from "@/lib/db/queries/category";
 import { notice } from "@/utils/notice";
 
@@ -22,27 +25,30 @@ app.post("/update", zValidator("json", updateSchema), async (c) => {
   if (url) {
     return c.json({
       message: "获取成功",
-      url: url
+      url: url,
     });
   }
   const category = await getCategoryByKey(categoryKey);
-  const quarkApi = process.env.QUARK_API;
+  const quarkApi = process.env.QUARK_API || "请先定义";
+  console.log(`quarkApi-->: ${quarkApi}`);
   const response = await fetch(`${quarkApi}/transfer`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       share_url: externalUrl,
       save_path: `/${category.name}`,
       gen_passcode: false,
-      expire_days: 1
+      expire_days: 1,
     }),
   });
   if (!response.ok) {
     const errorText = await response.text();
-    await notice(`告警：资源磁盘转存失败\nhttp状态码：${response.status}\n响应体：${errorText}`);
-    throw new Error('转存失败');
+    await notice(
+      `告警：资源磁盘转存失败\nhttp状态码：${response.status}\n响应体：${errorText}`,
+    );
+    throw new Error("转存失败");
   }
 
   const data = await response.json();
@@ -55,8 +61,8 @@ app.post("/update", zValidator("json", updateSchema), async (c) => {
   await updateResourceDiskUrl(id, newUrl);
   return c.json({
     message: "获取成功",
-    url: newUrl
+    url: newUrl,
   });
 });
 
-export default app; 
+export default app;
