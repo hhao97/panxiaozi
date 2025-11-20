@@ -168,7 +168,7 @@ export default async function ResourcePage({
           </p>
           <p className="mt-4 text-lg">二维码点击可放大查看</p>
           <p>
-            <WechatQRModal src="/wechat.jpg" alt="小付说工具" />
+            <WechatQRModal src="/wechat.jpg" alt="神奇的魔法海螺" />
           </p>
         </AlertDescription>
       </Alert>
