@@ -9,7 +9,7 @@ export function Footer() {
             <h3 className="font-bold text-foreground">盘搜索</h3>
             <p className="text-sm text-muted-foreground">
               盘搜索致力于打造一站式网盘资源搜索平台。我们仅提供搜索服务，不存储、上传或分发任何网盘内容。所有资源均来自第三方网盘，请用户自行判断资源的真实性与安全性。本站秉承非营利原则运营，完全免费使用。如发现任何侵权内容，请发送邮件至
-              1243907764@qq.com，我们将及时处理。
+              mmconch@outlook.com，我们将及时处理。
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export function Footer() {
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
                 <span className="text-sm text-muted-foreground">
-                  1243907764@qq.com
+                  mmconch@outlook.com
                 </span>
               </li>
               <li className="flex items-start gap-2">

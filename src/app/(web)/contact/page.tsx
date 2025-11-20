@@ -26,10 +26,10 @@ export default function ContactPage() {
         <p className="mb-4">
           如发现任何侵权内容，请发送邮件至{" "}
           <a
-            href="mailto:1243907764@qq.com"
+            href="mailto:mmconch@outlook.com"
             className="text-blue-600 hover:text-blue-800"
           >
-            1243907764@qq.com
+            mmconch@outlook.com
           </a>
           ，我们将及时处理。
         </p>
