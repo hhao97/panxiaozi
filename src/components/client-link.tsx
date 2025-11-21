@@ -122,7 +122,7 @@ export function ClientLink({
           <DialogHeader>
             <DialogTitle>扫描二维码</DialogTitle>
             <DialogDescription>
-              资源易和谐，请及时用手机夸克扫码转存
+              资源易和谐，请及时用手机扫码转存
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center justify-center py-4 space-y-4">
