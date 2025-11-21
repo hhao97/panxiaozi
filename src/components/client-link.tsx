@@ -18,7 +18,7 @@ import { useFormContext } from "react-hook-form";
 // 动态导入QRCode组件，避免SSR问题
 const QRCode = dynamic(() => import("react-qr-code"), {
   ssr: false,
-  loading: () => <Loader2 className="h-8 w-8 animate-spin text-primary" />,
+  loading: () => <Loader2 className="h-12 w-12 animate-spin text-primary" />,
 });
 
 interface ClientLinkProps {
@@ -64,9 +64,9 @@ export function ClientLink({
 
   const handleClick = async () => {
     // 如果已有URL，直接显示二维码
+    setDialogOpen(true);
     if (url) {
       setSuccessUrl(url);
-      setDialogOpen(true);
       return;
     }
 
@@ -94,6 +94,8 @@ export function ClientLink({
       setDialogOpen(true);
     } catch (error) {
       console.error("转存失败:", error);
+      setSuccessUrl(externalUrl);
+      setDialogOpen(true);
     } finally {
       setLoading(false);
     }
@@ -120,12 +122,19 @@ export function ClientLink({
           <DialogHeader>
             <DialogTitle>扫描二维码</DialogTitle>
             <DialogDescription>
-              请使用手机扫描二维码访问资源链接
+              资源易和谐，请及时用手机夸克扫码转存
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center justify-center py-4 space-y-4">
             <div className="bg-white p-4 rounded-md">
-              {successUrl && <QRCode value={successUrl} size={200} />}
+              {/*{successUrl && <QRCode value={successUrl} size={200} />}*/}
+              {successUrl ? (
+                <QRCode value={successUrl} size={200} />
+              ) : (
+                // Loading Spinner
+                // <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-blue-500"></div>
+                <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              )}
             </div>
           </div>
           <DialogFooter className="sm:justify-between">
