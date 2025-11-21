@@ -13,6 +13,7 @@ import {
 } from "./ui/dialog";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
+import { useFormContext } from "react-hook-form";
 
 // 动态导入QRCode组件，避免SSR问题
 const QRCode = dynamic(() => import("react-qr-code"), {
@@ -50,7 +51,7 @@ export function ClientLink({
       const userAgent = navigator.userAgent;
       const isMobileDevice =
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          userAgent
+          userAgent,
         );
       setIsMobile(isMobileDevice);
     };
@@ -86,7 +87,7 @@ export function ClientLink({
       });
 
       const data = await response.json();
-      const newUrl = data.url;
+      var newUrl = data.url || externalUrl;
 
       // 设置成功URL并打开弹窗
       setSuccessUrl(newUrl);
