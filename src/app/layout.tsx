@@ -123,11 +123,11 @@ export default function RootLayout({
         </ThemeProvider>
         {process.env.NODE_ENV === "production" && (
           <>
-            <Script
-              src="https://umami.xiaozi.cc/script.js"
-              data-website-id="3ee3abd4-dbdc-47aa-a0a0-f5defc29d76f"
+            <script
               defer
-            />
+              src="https://cloud.umami.is/script.js"
+              data-website-id="d4cb805c-e7f5-4de2-b26c-adc68c4e40d8"
+            ></script>
             <OpenPanelComponent
               clientId={process.env.OPEN_PANEL_CLIENT_ID as string}
               trackScreenViews={true}
