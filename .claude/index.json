@@ -1,0 +1,266 @@
+{
+  "project": "panxiaozi",
+  "version": "0.1.0",
+  "timestamp": "2025-11-21T14:31:35+08:00",
+  "summary": "盘搜索 - 一站式网盘资源搜索引擎",
+  "techStack": [
+    "Next.js 15",
+    "React 18",
+    "TypeScript",
+    "Tailwind CSS",
+    "Drizzle ORM",
+    "MySQL",
+    "Hono",
+    "JWT"
+  ],
+  "modules": [
+    {
+      "path": "src/app",
+      "name": "应用路由层",
+      "type": "pages",
+      "entry": "src/app/layout.tsx",
+      "subModules": [
+        {
+          "path": "src/app/(web)",
+          "name": "前台页面",
+          "description": "用户搜索界面，包括首页、搜索结果、资源详情"
+        },
+        {
+          "path": "src/app/(admin)",
+          "name": "后台管理",
+          "description": "管理员后台，包括资源管理、分类管理、数据统计"
+        },
+        {
+          "path": "src/app/api",
+          "name": "API 路由",
+          "description": "基于 Hono 的 API 端点集合"
+        }
+      ],
+      "coverage": {
+        "scanned": true,
+        "hasTests": false,
+        "hasInterface": true,
+        "hasConfig": true
+      }
+    },
+    {
+      "path": "src/lib",
+      "name": "核心业务逻辑",
+      "type": "library",
+      "entry": "src/lib/db/index.ts",
+      "keyFiles": [
+        "src/lib/db/schema.ts",
+        "src/lib/db/queries/resource.ts",
+        "src/lib/db/queries/category.ts",
+        "src/lib/db/queries/user.ts",
+        "src/lib/auth.ts",
+        "src/lib/utils.ts"
+      ],
+      "coverage": {
+        "scanned": true,
+        "hasTests": false,
+        "hasInterface": true,
+        "hasConfig": true,
+        "hasDataModel": true
+      }
+    },
+    {
+      "path": "src/components",
+      "name": "组件库",
+      "type": "components",
+      "keyFiles": [
+        "src/components/ui/",
+        "src/components/resource.tsx",
+        "src/components/search-form.tsx",
+        "src/components/data-table.tsx"
+      ],
+      "description": "Shadcn/ui 基础组件 + 业务组件",
+      "coverage": {
+        "scanned": true,
+        "hasTests": false,
+        "hasInterface": false,
+        "totalFiles": 60
+      }
+    },
+    {
+      "path": "src/routes",
+      "name": "API 路由定义",
+      "type": "api",
+      "entry": "src/app/api/[[...route]]/route.ts",
+      "keyFiles": [
+        "src/routes/resource.ts",
+        "src/routes/category.ts",
+        "src/routes/user.ts",
+        "src/routes/resource-disk.ts"
+      ],
+      "apis": [
+        {
+          "path": "/api/resource",
+          "methods": ["GET", "POST", "DELETE"],
+          "description": "资源管理 API（需认证）"
+        },
+        {
+          "path": "/api/category",
+          "methods": ["GET", "POST", "DELETE"],
+          "description": "分类管理 API（需认证）"
+        },
+        {
+          "path": "/api/user",
+          "methods": ["POST"],
+          "description": "用户登录 API"
+        },
+        {
+          "path": "/api/resource-disk",
+          "methods": ["GET", "POST", "DELETE"],
+          "description": "网盘资源管理 API（需认证）"
+        }
+      ],
+      "coverage": {
+        "scanned": true,
+        "hasTests": false,
+        "hasInterface": true,
+        "hasAuth": true
+      }
+    },
+    {
+      "path": "src/middleware",
+      "name": "中间件层",
+      "type": "middleware",
+      "keyFiles": [
+        "src/middleware.ts",
+        "src/middleware/auth.ts"
+      ],
+      "description": "路由保护与 JWT 认证",
+      "coverage": {
+        "scanned": true,
+        "hasTests": false
+      }
+    },
+    {
+      "path": "drizzle",
+      "name": "数据库迁移",
+      "type": "migrations",
+      "description": "Drizzle ORM 版本化迁移文件",
+      "migrations": [
+        "0000_omniscient_sway.sql",
+        "0001_white_bulldozer.sql",
+        "0002_fair_zarek.sql",
+        "0003_simple_whizzer.sql",
+        "0004_curly_sersi.sql",
+        "0005_dry_nextwave.sql",
+        "0006_classy_boom_boom.sql",
+        "0007_misty_gunslinger.sql",
+        "0008_serious_thor.sql",
+        "0009_useful_toro.sql",
+        "0010_same_vargas.sql",
+        "0011_adorable_doctor_octopus.sql",
+        "0012_overjoyed_frightful_four.sql",
+        "0013_clean_black_bolt.sql",
+        "0014_tricky_lester.sql"
+      ],
+      "coverage": {
+        "scanned": true,
+        "totalMigrations": 15
+      }
+    },
+    {
+      "path": "src/scripts",
+      "name": "运维脚本",
+      "type": "scripts",
+      "keyFiles": [
+        "src/scripts/create-admin.ts",
+        "src/scripts/migrate-resource-disk.ts"
+      ],
+      "description": "管理员创建、数据迁移等工具脚本",
+      "coverage": {
+        "scanned": true
+      }
+    }
+  ],
+  "dataModels": [
+    {
+      "name": "category",
+      "fields": ["id", "name", "key"],
+      "indexes": ["unique(key)"],
+      "description": "资源分类表"
+    },
+    {
+      "name": "resource",
+      "fields": [
+        "id",
+        "categoryKey",
+        "title",
+        "pinyin",
+        "desc",
+        "cover",
+        "diskType",
+        "url",
+        "hotNum",
+        "isShowHome",
+        "updatedAt"
+      ],
+      "indexes": ["idx_hot_num", "unique_title"],
+      "description": "网盘资源主表"
+    },
+    {
+      "name": "user",
+      "fields": ["id", "username", "password", "createdAt"],
+      "description": "管理员用户表"
+    },
+    {
+      "name": "resource_disk",
+      "fields": ["id", "resourceId", "diskType", "externalUrl", "url", "updatedAt"],
+      "indexes": ["idx_resource_id"],
+      "description": "资源网盘关联表（支持一资源多网盘）"
+    }
+  ],
+  "coverage": {
+    "estimatedTotalFiles": 120,
+    "scannedFiles": 95,
+    "coveragePercentage": 79,
+    "scannedModules": 7,
+    "totalModules": 7,
+    "gaps": [
+      {
+        "module": "src/components",
+        "issue": "部分业务组件未详细扫描（Hero、SearchResults 等）",
+        "priority": "low"
+      },
+      {
+        "module": "project",
+        "issue": "缺少测试文件",
+        "priority": "medium"
+      },
+      {
+        "module": "src/hooks",
+        "issue": "自定义 Hooks 文件较少，仅扫描到部分",
+        "priority": "low"
+      }
+    ]
+  },
+  "ignored": {
+    "patterns": [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      ".git/**",
+      "*.lock",
+      "*.log",
+      "*.png",
+      "*.jpg",
+      "*.svg",
+      "*.ico"
+    ],
+    "totalIgnoredFiles": "~25000 (node_modules 占主要部分)"
+  },
+  "nextSteps": [
+    "建议补扫: src/components/hero.tsx, src/components/search-results.tsx（业务组件细节）",
+    "建议补扫: src/hooks 目录（自定义 Hooks 逻辑）",
+    "建议补扫: src/contexts/title-context.tsx（状态管理）",
+    "建议添加: 单元测试文件（Vitest + Testing Library）",
+    "建议添加: E2E 测试（Playwright）"
+  ],
+  "truncated": false,
+  "note": "本次扫描完成度 79%，核心模块已全部覆盖，可增量补扫细节组件"
+}
