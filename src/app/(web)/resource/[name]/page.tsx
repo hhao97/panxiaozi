@@ -173,16 +173,6 @@ export default async function ResourcePage({
         </AlertDescription>
       </Alert>
 
-      <Alert className="mb-6 bg-amber-50 border-amber-200">
-        <AlertDescription className="text-amber-700">
-          <p>手机支付宝扫码，薅羊毛每天可薅</p>
-          <p className="mt-4 text-lg">点击可放大查看</p>
-          <p>
-            <WechatQRModal src="/redpack.jpg" alt="神奇的魔法海螺" />
-          </p>
-        </AlertDescription>
-      </Alert>
-
       <div className="bg-card rounded-lg p-1 md:p-6 mb-6 shadow-sm">
         <div className="flex flex-col md:flex-row items-start mb-4">
           <span className="text-base md:mr-2 my-2">资源地址:</span>
